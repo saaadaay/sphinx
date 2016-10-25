@@ -83,3 +83,4 @@ unless you want to contribute back to the upstream project.
 [ci]: https://about.gitlab.com/gitlab-ci/
 [userpages]: http://doc.gitlab.com/ee/pages/README.html#user-or-group-pages
 [projpages]: http://doc.gitlab.com/ee/pages/README.html#project-pages
+[sphinx]: http://www.sphinx-doc.org/
