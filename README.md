@@ -53,11 +53,11 @@ pages:
 To work locally with this project, you'll have to follow the steps below:
 
 1. Fork, clone or download this project
-1. [Install][] Sphinx
+1. [Install][sphinx] Sphinx
 1. Generate the documentation: `make`
 
 The generated HTML will be located in the location specified by `conf.py`,
-in this case `doxygen/documentation/html`.
+in this case `_build/html`.
 
 ## GitLab User or Group Pages
 
@@ -76,9 +76,7 @@ unless you want to contribute back to the upstream project.
 
 ## Troubleshooting
 
-1. Example problem
-
-    Example solution
+No issues reported yet.
 
 [ci]: https://about.gitlab.com/gitlab-ci/
 [userpages]: http://doc.gitlab.com/ee/pages/README.html#user-or-group-pages
