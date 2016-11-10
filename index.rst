@@ -17,6 +17,9 @@ Indices and tables
 ==================
 
 * :ref:`genindex`
-* :ref:`modindex`
 * :ref:`search`
 
+Fork this project
+==================
+
+* https://gitlab.com/pages/sphinx
