@@ -78,6 +78,10 @@ unless you want to contribute back to the upstream project.
 
 No issues reported yet.
 
+---
+
+Forked from https://gitlab.com/Eothred/sphinx
+
 [ci]: https://about.gitlab.com/gitlab-ci/
 [userpages]: http://doc.gitlab.com/ee/pages/README.html#user-or-group-pages
 [projpages]: http://doc.gitlab.com/ee/pages/README.html#project-pages
