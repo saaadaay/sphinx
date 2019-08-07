@@ -11,7 +11,7 @@ build-pages:
   - make html
   cache:
     paths:
-      - _build/html/
+    - _build/html/
     key: doc
 
 deploy-pages:
@@ -24,5 +24,5 @@ deploy-pages:
   - master
   cache:
     paths:
-      - _build/html/
+    - _build/html/
     key: doc
