@@ -2,7 +2,8 @@
 
 image: alpine
 
-build-pages:
+build:pages:
+  stage: build
   script:
   - apk --no-cache add py2-pip python-dev
   - pip install sphinx
@@ -14,7 +15,8 @@ build-pages:
     - _build/html/
     key: doc
 
-deploy-pages:
+deploy:pages:
+  stage: deploy
   script:
   - mv _build/html/ public/
   artifacts:
