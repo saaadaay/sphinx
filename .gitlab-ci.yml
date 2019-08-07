@@ -1,14 +1,28 @@
+# .gitlab-ci.yml -- Gitlab CI/CD main configuration file
+
 image: alpine
 
-pages:
+build-pages:
   script:
   - apk --no-cache add py2-pip python-dev
   - pip install sphinx
+  - pip install sphinx_rtd_theme
   - apk --no-cache add make
   - make html
+  cache:
+    paths:
+      - _build/html/
+    key: doc
+
+deploy-pages:
+  script:
   - mv _build/html/ public/
   artifacts:
     paths:
     - public
   only:
   - master
+  cache:
+    paths:
+      - _build/html/
+    key: doc
