@@ -11,7 +11,7 @@ Contents:
 .. toctree::
    :maxdepth: 2
    
-   song_one
+   song-one
 
 
 
