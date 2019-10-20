@@ -1,4 +1,4 @@
-.. _song_one::
+.. _song-one::
 
 Song One
 ########
