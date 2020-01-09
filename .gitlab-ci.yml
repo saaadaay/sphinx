@@ -1,10 +1,22 @@
-image: alpine
+image: python:3.7-alpine
+
+test:
+  stage: test
+  script:
+  - apk --no-cache add make
+  - pip install -U sphinx
+  - make html
+  - mv _build/html/ public/
+  only:
+  - branches
+  except:
+  - master
 
 pages:
+  stage: deploy
   script:
-  - apk --no-cache add py2-pip python-dev
-  - pip install sphinx
   - apk --no-cache add make
+  - pip install -U sphinx
   - make html
   - mv _build/html/ public/
   artifacts:
