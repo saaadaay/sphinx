@@ -1,11 +1,11 @@
-![Build Status](https://gitlab.com/pages/sphinx/badges/master/build.svg)
+![Build Status](https://gitlab.com/pages/sphinx/badges/master/pipeline.svg)
 
 ---
 
 Example [sphinx] documentation website using GitLab Pages.
 
-Learn more about GitLab Pages at https://pages.gitlab.io and the official
-documentation https://docs.gitlab.com/ce/user/project/pages/.
+Learn more about GitLab Pages at https://about.gitlab.com/product/pages/ and the official
+documentation https://docs.gitlab.com/ee/user/project/pages/.
 
 ---
 
@@ -28,15 +28,23 @@ This project's static Pages are built by [GitLab CI][ci], following the steps
 defined in [`.gitlab-ci.yml`](.gitlab-ci.yml):
 
 ```
-image: alpine
+image: python:3.7-alpine
+
+test:
+  stage: test
+  script:
+  - pip install -U sphinx
+  - sphinx-build -b html . public
+  only:
+  - branches
+  except:
+  - master
 
 pages:
+  stage: deploy
   script:
-  - apk --no-cache add py2-pip python-dev
-  - pip install sphinx
-  - apk --no-cache add make
-  - make html
-  - mv _build/html/ public/
+  - pip install -U sphinx
+  - sphinx-build -b html . public
   artifacts:
     paths:
     - public
@@ -82,7 +90,7 @@ No issues reported yet.
 
 Forked from https://gitlab.com/Eothred/sphinx
 
-[ci]: https://about.gitlab.com/gitlab-ci/
-[userpages]: https://docs.gitlab.com/ce/user/project/pages/introduction.html#user-or-group-pages
-[projpages]: https://docs.gitlab.com/ce/user/project/pages/introduction.html#project-pages
+[ci]: https://about.gitlab.com/product/continuous-integration/
+[userpages]: https://docs.gitlab.com/ee/user/project/pages/getting_started_part_one.html#user-and-group-website-examples
+[projpages]: https://docs.gitlab.com/ee/user/project/pages/getting_started_part_one.html#project-website-examples
 [sphinx]: http://www.sphinx-doc.org/
