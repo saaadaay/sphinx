@@ -33,10 +33,8 @@ image: python:3.7-alpine
 test:
   stage: test
   script:
-  - apk --no-cache add make
   - pip install -U sphinx
-  - make html
-  - mv _build/html/ public/
+  - sphinx-build -b html . public
   only:
   - branches
   except:
@@ -45,10 +43,8 @@ test:
 pages:
   stage: deploy
   script:
-  - apk --no-cache add make
   - pip install -U sphinx
-  - make html
-  - mv _build/html/ public/
+  - sphinx-build -b html . public
   artifacts:
     paths:
     - public
