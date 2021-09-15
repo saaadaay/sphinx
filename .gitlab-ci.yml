@@ -7,9 +7,9 @@ test:
   - sphinx-build -b html . public
   only:
   - branches
-  except:
-  - master
-
+  rules:
+    - if: $CI_COMMIT_REF_NAME != $CI_DEFAULT_BRANCH
+    
 pages:
   stage: deploy
   script:
@@ -18,5 +18,5 @@ pages:
   artifacts:
     paths:
     - public
-  only:
-  - master
+  rules:
+    - if: $CI_COMMIT_REF_NAME == $CI_DEFAULT_BRANCH
